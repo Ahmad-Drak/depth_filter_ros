@@ -43,8 +43,11 @@ class SubThenFilter:
 if __name__ == "__main__":
     rospy.init_node("depth_filter", anonymous=True)
     sf = SubThenFilter()
-    rospy.loginfo("Subscribed to topic %s", /camera/depth/image_rect_raw)
-    print("THIS SHIT")
+    subtopic = "/camera/depth/image_rect_raw"
+    pubtopic = "filtered_image"
+    rospy.loginfo("Subscribed to topic %s", subtopic)
+    rospy.loginfo("Publishing filtered image to topic %s", pubtopic)
+
     try:
         rospy.spin()
     except KeyboardInterrupt:
