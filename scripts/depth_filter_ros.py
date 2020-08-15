@@ -26,8 +26,10 @@ class SubThenFilter:
 
         cv_image = np.nan_to_num(cv_image)
         if self.use_median_blur:
-            #cv_image = cv2.medianBlur(cv_image, self.median_blur_size)
-            cv_image = cv2.bilateralFilter(cv_image, 15, 50, 50)
+            cv_image = cv2.medianBlur(cv_image, self.median_blur_size)
+	    #for the bilateral filter, consider converting the image into gray scale
+	    #gray = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
+            #cv_image = cv2.bilateralFilter(cv_image, 7, 50, 50)
 
 
         try:
@@ -41,6 +43,8 @@ class SubThenFilter:
 if __name__ == "__main__":
     rospy.init_node("depth_filter", anonymous=True)
     sf = SubThenFilter()
+    rospy.loginfo("Subscribed to topic %s", /camera/depth/image_rect_raw)
+    print("THIS SHIT")
     try:
         rospy.spin()
     except KeyboardInterrupt:
