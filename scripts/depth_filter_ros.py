@@ -28,8 +28,9 @@ class SubThenFilter:
         if self.use_median_blur:
             cv_image = cv2.medianBlur(cv_image, self.median_blur_size)
 	    #for the bilateral filter, consider converting the image into gray scale
-	    #gray = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
-            #cv_image = cv2.bilateralFilter(cv_image, 7, 50, 50)
+	    #gray = cv2.cvtColor(cv_image, cv2.COLOR_cv)	#this throws an error
+	    #gray = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)	#THIS DOESNT WORK LOOOL
+            #cv_image1 = cv2.bilateralFilter(gray, 7, 50, 50)
 
 
         try:
