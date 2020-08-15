@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="depth_filter_ros" pkg="depth_filter_ros" type="depth_filter_ros.py" output="screen">
+  <!--<node pkg="depth_filter_ros" type="neato_laser_publisher" name="xv_11_node">-->
+    
+  </node>
+  
+</launch>
